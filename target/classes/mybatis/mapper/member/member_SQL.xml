@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member">
+    
+    <!-- 01. 회원록록 -->
+    <select id="memberList" resultType="com.ga.member.service.MemberVO">
+        SELECT 
+          user_id AS userId, 
+          user_name AS userName,
+          user_email AS userEmail,
+          user_regdate AS userRegdate
+        FROM tbl_member
+        ORDER BY userId
+    </select>
+    
+    <!-- 02. 회원 등록 -->
+    <insert id="insertMember">
+        INSERT INTO tbl_member
+            (user_id, user_pw, user_name, user_email)
+        VALUES 
+            (#{userId}, #{userPw}, #{userName}, #{userEmail})    
+    </insert>
+ 
+</mapper>
