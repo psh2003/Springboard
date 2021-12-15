@@ -10,7 +10,7 @@ public interface BoardDAO {
      * 게시물 리스트 조회
      * @param boardVO
      * @return
-     * @throws Exception
+     * @throws Exception   
      */
     List<BoardVO> selectBoardList(BoardVO boardVO) throws Exception;
  
