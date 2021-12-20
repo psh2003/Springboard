@@ -24,7 +24,8 @@ public class BoardDAOService implements BoardDAO{
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         mapper.insertBoard(boardVO);
     }
- 
+    
+    
     public void updateBoard(BoardVO boardVO) throws Exception {
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         mapper.updateBoard(boardVO);

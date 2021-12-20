@@ -32,7 +32,6 @@
         where
             code = #{code}
     </update>
-    
     <delete id="deleteBoard">
         delete from board
         where

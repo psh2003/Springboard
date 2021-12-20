@@ -34,10 +34,9 @@ public class BoardServiceImpl implements BoardService{
     public void deleteBoard(BoardVO boardVO) throws Exception {
         boardDAOService.deleteBoard(boardVO);
     }
- 
+
     @Override
     public BoardVO selectBoardByCode(BoardVO boardVO) throws Exception {
-        
         BoardVO resultVO = boardDAOService.selectBoardByCode(boardVO);
         
         return resultVO; 

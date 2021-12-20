@@ -42,4 +42,6 @@ public interface BoardService {
      * @throws Exception
      */
     public BoardVO selectBoardByCode(BoardVO boardVO) throws Exception;
+    
+	
 }

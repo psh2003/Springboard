@@ -58,7 +58,6 @@ public class BoardController {
     public String write(@ModelAttribute("boardVO") BoardVO boardVO, Model model) throws Exception{
         
         boardServiceImpl.insertBoard(boardVO);
-        
         return "redirect:/board/boardList.do";
     }
     
@@ -118,7 +117,6 @@ public class BoardController {
 		try{
 		            
             boardServiceImpl.deleteBoard(boardVO);
-            
         } catch (Exception e){
             e.printStackTrace();
         }        
