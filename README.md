@@ -4,7 +4,7 @@ springboard
 배포도 진행하였습니다.
 
 주소는
-https://gangnam-americano.tistory.com/11?category=976794 입니다
+http://www.park-se-hyeon.xyz:8080/board/boardList.do 입니다
 
 https://doublesprogramming.tistory.com/95?category=736879
 
