@@ -7,7 +7,8 @@ public class MemberVO {
     private String userPw;
     private String userName; 
     private String userEmail; 
-    private Date userRegdate; // java.sql.Date
+    private String salt;
+	private Date userRegdate; // java.sql.Date
     private Date userUpdatedate;
     
     // Getter/Setter
@@ -35,6 +36,12 @@ public class MemberVO {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+    public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
     public Date getUserRegdate() {
         return userRegdate;
     }
@@ -48,11 +55,11 @@ public class MemberVO {
         this.userUpdatedate = userUpdatedate;
     }
     
-    // toString()
     @Override
-    public String toString() {
-        return "MemberVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userEmail="
-                + userEmail + ", userRegdate=" + userRegdate + ", userUpdatedate=" + userUpdatedate + "]";
-    }
+	public String toString() {
+		return "MemberVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userEmail="
+				+ userEmail + ", salt=" + salt + ", userRegdate=" + userRegdate + ", userUpdatedate=" + userUpdatedate
+				+ "]";
+	}
     
 }

@@ -52,7 +52,7 @@ function fn_cancel(){
     });
 }); */
 
-function fn_login(){
+/* function fn_login(){
 	<c:choose>
     
 		<c:when test="${msg == 'failure'}">
@@ -87,11 +87,54 @@ function fn_login(){
     form.action = "<c:url value='/login/loginCheck.do'/>";
     form.submit();
     
+} */
+function fn_login(){
+/*     var userId = $("#userId").val();
+    var userPw = $("#userPw").val();
+    /**
+    * 아래는 localStorage를 활용한 아이디 기억을 사용하기 위함입니다.
+    * 아이디 저장 checkbox가 선택된 상태로 로그인 버튼을 클릭하면 
+    * 다음 login 페이지로 접속할 시 document.ready시점에 localStorage.getItem("saveId")
+    * 값이 '', null, 'N' 중에 없을 시에만 id input란에 값을 넣어주면 됩니다.
+    **/
+
+    //var loginData = {"userId":userId, "userPw":userPw};
+	var userId = $('#userId').val();
+    var userPw = $('#userPw').val();
+    if(userId == ""){
+        alert("아이디를 입력하세요.");
+        $("#userId").focus(); // 입력포커스 이동
+        return; // 함수 종료
+    }
+    else if(userPw == ""){
+        alert("비밀번호를 입력하세요.");
+        $("#userPw").focus();
+        return;
+    }
+    $.ajax({
+    	
+    	url : "loginCheck.do",
+        type : "POST",
+        data : {
+        	userId:userId,
+        	userPw:userPw 
+        },
+        success : function(data){
+        	
+        	if(data == "false")
+                alert('잘못된 아이디이거나, 비밀번호가 틀렸습니다.') ;
+            else
+                location.href="${path}/board/boardList.do" ; 
+        }
+    });
+
+
+    
 }
 function enterkey() {
 	var form = document.getElementById("loginForm");
 	if (window.event.keyCode == 13) {
-    	form.fn_login();
+    	$('#btnLogin').click();
     }
 }
 </script>

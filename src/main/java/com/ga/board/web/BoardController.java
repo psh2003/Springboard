@@ -1,7 +1,8 @@
 package com.ga.board.web;
  
 import java.util.List;
- 
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
  
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
- 
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.ga.board.service.BoardVO;
 import com.ga.board.service.impl.BoardService;
  
@@ -35,7 +37,11 @@ public class BoardController {
         
         return "board/boardList";
     }
-    
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Locale locale, Model model) {
+       
+       return "redirect:/board/boardList.do";
+    }
     /**
      * 글쓰기 폼
      * @return

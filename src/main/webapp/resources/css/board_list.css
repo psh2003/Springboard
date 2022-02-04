@@ -66,6 +66,10 @@ input::-moz-placeholder {color:#999; opacity:1;}/* 파이어폭스 19–50 */
 input:-ms-input-placeholder {color:#999;}/* 인터넷 익스플로러 10+ */
 input::placeholder {color:#999; opacity:1;}/* 파이어폭스 51+, 크롬 57+ */
 
+.boardlist{
+	padding-left: 20%;
+	padding-right: 20%;
+}
 thead>tr>td{
     text-align: center;
     font-size: 35px;

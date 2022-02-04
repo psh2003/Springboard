@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.ga.common.LoginVO;
+import com.ga.util.SHA;
  
 
  
@@ -21,7 +22,13 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     public boolean loginCheck(LoginVO vo) {
         String name = sqlSession.selectOne("login.loginCheck", vo);
-        return (name == null) ? false : true;
+        String pwd1 = sqlSession.selectOne("login.pwdChk", vo);
+        if(name!=null && pwd1.equals(vo.getUserPw())) {
+        	return true;
+        }
+        else
+        	return false;
+//        return (name == null) ? false : true;
     }
     // 01_02. 회원 로그인 정보
     @Override
@@ -32,4 +39,10 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     public void logout(HttpSession sessin) {
     }
+	@Override
+	public String getSaltById(LoginVO vo) {
+		// TODO Auto-generated method stub
+		String salt = sqlSession.selectOne("login.getSaltById", vo);
+		return salt;
+	}
 }

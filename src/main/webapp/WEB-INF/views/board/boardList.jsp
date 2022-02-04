@@ -88,10 +88,11 @@ function fn_view(code){
 	                </c:forEach>
 	            </tbody>
 	        </table>
+	        <div>            
+            	<a href='#' class="write_btn" onClick='fn_write()'>글쓰기</a>           
+        	</div>
     	</div>
-        <div>            
-            <a href='#' class="write_btn" onClick='fn_write()'>글쓰기</a>           
-        </div>
+        
     </form>
 </div>
 </body>

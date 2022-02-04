@@ -13,4 +13,6 @@ public interface LoginService {
     public LoginVO viewMember(LoginVO vo);
     // 02. 회원 로그아웃
     public void logout(HttpSession session);
+    // 회원 비밀번호
+    public String getSaltById(LoginVO vo);
 }

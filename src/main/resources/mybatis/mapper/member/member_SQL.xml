@@ -20,9 +20,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <!-- 02. 회원 등록 -->
     <insert id="insertMember">
         INSERT INTO tbl_member
-            (user_id, user_pw, user_name, user_email)
+            (user_id, user_pw, user_name, user_email,salt)
         VALUES 
-            (#{userId}, #{userPw}, #{userName}, #{userEmail})    
+            (#{userId}, #{userPw}, #{userName}, #{userEmail}, #{salt})    
     </insert>
  
 </mapper>
