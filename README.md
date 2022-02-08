@@ -10,7 +10,7 @@ https://gangnam-americano.tistory.com/11?category=976794
 >ver 3 : 2022-02-08 코드정리 & 페이징(rownum) 구현, css 수정   
 * * * 
 
-![Alt text](C:/Users/Neo/Desktop/main.png "메인페이지")
-![Alt text](C:/Users/Neo/Desktop/login.png "로그인페이지")
-![Alt text](C:/Users/Neo/Desktop/info.png "상세글")
-![Alt text](C:/Users/Neo/Desktop/write.png "글작성")
+![로그인페이지](https://user-images.githubusercontent.com/83701900/152947077-e82f8b91-b521-44af-991d-598b73ae2d24.png)   
+![작성페이지](https://user-images.githubusercontent.com/83701900/152947078-0e00c3cc-e998-4566-ad29-b48adbbb8f5d.png)   
+![메인페이지](https://user-images.githubusercontent.com/83701900/152947081-c940d6f5-978c-4f8a-a47a-e4f22fb1a31d.png)   
+![상세페이지](https://user-images.githubusercontent.com/83701900/152947083-36096908-627a-4d33-80e3-817573d1efcd.png)   
