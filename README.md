@@ -9,7 +9,8 @@ https://gangnam-americano.tistory.com/11?category=976794
 >ver 2 : 2022-02-04 AJAX로그인 구현, 비밀번호 암호화 추가   
 >ver 3 : 2022-02-08 코드정리 & 페이징(rownum) 구현, css 수정   
 * * * 
-<img src="C:\Users\Neo\Desktop\main.png" width="450px" height="300px" title="메인페이지" alt="Main"></img><br/>   
-<img src="C:\Users\Neo\Desktop\login.png" width="450px" height="300px" title="로그인페이지" alt="RubberDuck"></img><br/>   
-<img src="C:\Users\Neo\Desktop\info.png" width="450px" height="300px" title="상세글" alt="RubberDuck"></img><br/>   
-<img src="C:\Users\Neo\Desktop\write.png" width="450px" height="300px" title="글작성" alt="RubberDuck"></img><br/>   
+
+![Alt text](C:/Users/Neo/Desktop/main.png "메인페이지")
+![Alt text](C:/Users/Neo/Desktop/login.png "로그인페이지")
+![Alt text](C:/Users/Neo/Desktop/info.png "상세글")
+![Alt text](C:/Users/Neo/Desktop/write.png "글작성")
