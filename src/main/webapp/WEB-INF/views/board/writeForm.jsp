@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>게시글 작성</title>
 <link rel="stylesheet" href="${path}/resources/css/board_write.css">
 </head>
     
@@ -42,11 +43,11 @@
 		        <tbody>
 		            <tr>
 		                <th>제목</th>
-		                <td><input style="width: 500px" type="text" id="title" name="title" /></td>
+		                <td><input type="text" id="title" name="title" /></td>
 		            </tr>
 		            <tr>
 		                <th>내용</th>
-		                <td class="content"><textarea style="width: 500px" rows="10" cols="10" id="content" name="content"></textarea></td>
+		                <td class="content"><textarea rows="10" cols="10" id="content" name="content"></textarea></td>
 		            </tr>
 		            <tr>
 		                <th>작성자</th>

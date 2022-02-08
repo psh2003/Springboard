@@ -1,8 +1,10 @@
 package com.ga.board.service.impl;
  
 import java.util.List;
- 
+import java.util.Map;
+
 import com.ga.board.service.BoardVO;
+import com.ga.board.service.Criteria;
  
 public interface BoardService {
  
@@ -43,5 +45,8 @@ public interface BoardService {
      */
     public BoardVO selectBoardByCode(BoardVO boardVO) throws Exception;
     
-	
+  //BoardService
+    List<Map<String, Object>> selectBoardList(Criteria cri);
+    int countBoardListTotal();
+
 }

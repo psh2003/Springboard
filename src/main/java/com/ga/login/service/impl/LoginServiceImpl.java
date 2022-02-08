@@ -44,7 +44,6 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public String getSaltById(LoginVO vo) {
 		// TODO Auto-generated method stub
-		String salt = loginDao.getSaltById(vo);
-		return salt;
+		return loginDao.getSaltById(vo);
 	}
 }

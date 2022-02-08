@@ -65,9 +65,7 @@ public class LoginController {
 		 String pw_encrypt = sha.SHA512(vo.getUserPw(), salt);
 		 vo.setUserPw(pw_encrypt);
          boolean result = loginService.loginCheck(vo,session);
-         System.out.println(salt);
          if(result==true) {
-        	 
  			response.getWriter().print(true) ;
  		} else {
  			response.getWriter().print(false) ;

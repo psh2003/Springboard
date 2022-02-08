@@ -22,13 +22,7 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     public boolean loginCheck(LoginVO vo) {
         String name = sqlSession.selectOne("login.loginCheck", vo);
-        String pwd1 = sqlSession.selectOne("login.pwdChk", vo);
-        if(name!=null && pwd1.equals(vo.getUserPw())) {
-        	return true;
-        }
-        else
-        	return false;
-//        return (name == null) ? false : true;
+        return (name == null) ? false : true;
     }
     // 01_02. 회원 로그인 정보
     @Override
@@ -42,7 +36,6 @@ public class LoginDAOImpl implements LoginDAO {
 	@Override
 	public String getSaltById(LoginVO vo) {
 		// TODO Auto-generated method stub
-		String salt = sqlSession.selectOne("login.getSaltById", vo);
-		return salt;
+		return sqlSession.selectOne("login.getSaltById", vo);
 	}
 }

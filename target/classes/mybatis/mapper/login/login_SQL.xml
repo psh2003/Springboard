@@ -8,10 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="loginCheck" resultType="String">
         SELECT user_name AS userName FROM tbl_member
-        WHERE user_id = #{userId}
-    </select>
-    <select id="pwdChk" resultType="String">
-    	SELECT user_pw FROM tbl_member where user_id = #{userId}
+        WHERE user_id = #{userId} AND user_pw = #{userPw}
     </select>
     <select id="viewMember" resultType="com.ga.common.LoginVO">
         SELECT 

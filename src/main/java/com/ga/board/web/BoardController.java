@@ -2,6 +2,7 @@ package com.ga.board.web;
  
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
  
@@ -11,8 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.board.service.BoardVO;
+import com.ga.board.service.Criteria;
+import com.ga.board.service.PageMaker;
 import com.ga.board.service.impl.BoardService;
  
 @Controller
@@ -28,14 +32,21 @@ public class BoardController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/board/boardList.do")
-    public String boardList(@ModelAttribute("boardVO") BoardVO boardVO, Model model) throws Exception{
-                
-        List<BoardVO> list = boardServiceImpl.selectBoardList(boardVO);
-        
-        model.addAttribute("list", list);
-        
-        return "board/boardList";
+    @RequestMapping(value="/board/boardList")
+    public ModelAndView openBoardList(Criteria cri) throws Exception {
+            
+        ModelAndView mav = new ModelAndView("/board/boardList");
+            
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCri(cri);
+        pageMaker.setTotalCount(boardServiceImpl.countBoardListTotal());
+            
+        List<Map<String,Object>> list = boardServiceImpl.selectBoardList(cri);
+        mav.addObject("list", list);
+        mav.addObject("pageMaker", pageMaker);
+            
+        return mav;
+            
     }
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {

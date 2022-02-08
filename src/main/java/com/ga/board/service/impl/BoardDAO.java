@@ -1,8 +1,10 @@
 package com.ga.board.service.impl;
  
 import java.util.List;
- 
+import java.util.Map;
+
 import com.ga.board.service.BoardVO;
+import com.ga.board.service.Criteria;
  
 public interface BoardDAO {
  
@@ -12,7 +14,7 @@ public interface BoardDAO {
      * @return
      * @throws Exception   
      */
-    List<BoardVO> selectBoardList(BoardVO boardVO) throws Exception;
+	
  
     /**
      * 게시물 등록
@@ -42,5 +44,13 @@ public interface BoardDAO {
      * @throws Exception
      */
     BoardVO selectBoardByCode(BoardVO boardVO) throws Exception;
+
+	int countBoardList();
+
+	List<Map<String, Object>> selectBoardList(Criteria cri);
  
+  
+
+
+    
 }

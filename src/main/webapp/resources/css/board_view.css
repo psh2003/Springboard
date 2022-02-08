@@ -66,6 +66,10 @@ input::-moz-placeholder {color:#999; opacity:1;}/* 파이어폭스 19–50 */
 input:-ms-input-placeholder {color:#999;}/* 인터넷 익스플로러 10+ */
 input::placeholder {color:#999; opacity:1;}/* 파이어폭스 51+, 크롬 57+ */
 
+body{
+	margin: 0 auto;
+	width: 40%;
+}
 
 h1{
     margin-top: 20px;
@@ -78,6 +82,8 @@ tr:nth-child(1){
     border-top: 2px solid #000;
 }
 tr{
+	border-left : 1px solid #dbdee1;
+	border-right :1px solid #dbdee1;
     border-bottom: 1px solid #dbdee1;
 }
 th{
@@ -110,6 +116,7 @@ td{
     margin-left: 10px;
 }
 input[type="text"], textarea{
+	width : 90%;
 	border: 1px solid #d8d8d8;
 }
 .content{

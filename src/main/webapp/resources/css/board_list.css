@@ -69,6 +69,8 @@ input::placeholder {color:#999; opacity:1;}/* 파이어폭스 51+, 크롬 57+ */
 .boardlist{
 	padding-left: 20%;
 	padding-right: 20%;
+	clear: both;
+	padding-bottom: 50px;
 }
 thead>tr>td{
     text-align: center;
@@ -125,6 +127,10 @@ td:nth-child(1):{
     float: right;
     text-align: center;
 }
+.wb{
+	width: 100%;
+	height: 40px;
+}
 .write_btn{
     margin-top: 25px;
     float: right;
@@ -134,4 +140,35 @@ td:nth-child(1):{
     color: #ffffff;
     text-align: center;
     padding-top: 8px;
+}
+ul {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-right: 0;
+}
+
+ul li {
+    text-align: center;
+    float: left;
+}
+
+ul li a {
+    display: block;
+    font-size: 14px;
+    padding: 9px 12px;
+    border-right: solid 1px #ccc;
+    box-sizing: border-box;
+}
+
+ul li.on {
+    background: #eda712;
+}
+
+ul li.on a {
+    color: #fff;
+}
+.btn-group_pagination{
+	margin-top: 30px;
+	text-align: center;
 }
