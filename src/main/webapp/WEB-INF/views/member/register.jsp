@@ -67,7 +67,7 @@
 		        </div>
 		        <div class="bwrap">
 			        <input type="button" class="reg_btn"onClick='fn_register_submit()' value="가입">
-			        <input type="button" class="list_btn" onClick='fn_cancel()' value="최소">
+			        <input type="button" class="list_btn" onClick='fn_cancel()' value="취소">
 		        </div>
 		        
 				
