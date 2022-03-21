@@ -42,6 +42,7 @@ function fn_view(code){
     form.submit(); 
 }
 </script>
+<meta name="viewport" content="width=device-width,initial-scale=0.55">
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
