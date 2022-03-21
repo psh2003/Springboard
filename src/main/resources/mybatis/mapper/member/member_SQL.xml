@@ -24,5 +24,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         VALUES 
             (#{userId}, #{userPw}, #{userName}, #{userEmail}, #{salt})    
     </insert>
- 
+    
+ 	<select id="checkId" parameterType="com.ga.member.service.MemberVO" resultType="java.lang.Integer">
+		SELECT NVL(COUNT(*),0)
+		FROM tbl_member WHERE user_id=#{userId}
+	</select>
+ 	
 </mapper>

@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ga.member.service.MemberVO;
 import com.ga.member.service.impl.MemberDAO;
@@ -64,6 +66,12 @@ public class MemberController {
         // member_list.jsp로 리다이렉트
         return "redirect:/board/boardList.do";
     } 
+    
+    @RequestMapping(value = "member/checkId.jy", method = { RequestMethod.GET, RequestMethod.POST})
+    public @ResponseBody int idCheck(@ModelAttribute MemberVO vo) {
+        return memberService.checkId(vo);
+    }//
+
     /*
     @RequestMapping("member/insert.do")
     // * 폼에서 입력한 데이터를 받아오는 법 3가지 

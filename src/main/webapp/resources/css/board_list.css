@@ -172,3 +172,11 @@ ul li.on a {
 	margin-top: 30px;
 	text-align: center;
 }
+.text-orange{
+	font-weight: bold;
+	background : #56bac8;
+	color : #ffffff;	    	
+}
+.text-bold{
+	font-weight: bold;
+}

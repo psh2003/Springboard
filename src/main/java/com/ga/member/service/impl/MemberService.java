@@ -15,4 +15,5 @@ public interface MemberService {
     public void deleteMember(String userId);
     // 회원정보 수정
     public void updateMember(MemberVO vo);
+	public int checkId(MemberVO vo);
 }

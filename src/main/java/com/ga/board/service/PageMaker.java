@@ -1,5 +1,8 @@
 package com.ga.board.service;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class PageMaker {
     
     private Criteria cri;
@@ -9,7 +12,7 @@ public class PageMaker {
     private boolean prev;
     private boolean next;
     private int displayPageNum = 10;
-    
+    private int page;
     public Criteria getCri() {
         return cri;
     }
@@ -23,7 +26,6 @@ public class PageMaker {
         this.totalCount = totalCount;
         calcData();
     }
-    
     private void calcData() {
         
         endPage = (int) (Math.ceil(cri.getPage() / (double) displayPageNum) * displayPageNum);
@@ -38,9 +40,14 @@ public class PageMaker {
  
         prev = startPage == 1 ? false : true;
         next = endPage * cri.getPerPageNum() < totalCount ? true : false;
-        
+        page = cri.getPage();
     }
-    
+    public int getPage() {
+        return page;
+    }
+    public void setPage() {
+        this.page = page;
+    }
     public int getStartPage() {
         return startPage;
     }
@@ -70,6 +77,23 @@ public class PageMaker {
     }
     public void setDisplayPageNum(int displayPageNum) {
         this.displayPageNum = displayPageNum;
+    }
+    
+    public String makeQueryPage(int page) {
+        UriComponents uri = UriComponentsBuilder.newInstance()
+                .queryParam("page", page)
+                .queryParam("perPageNum", cri.getPerPageNum())
+                .build();
+        return uri.toUriString();
+    }
+    
+    public String makeQueryPage(int idx, int page) {
+        UriComponents uri = UriComponentsBuilder.newInstance()
+                .queryParam("idx", idx)
+                .queryParam("page", page)
+                .queryParam("perPageNum", cri.getPerPageNum())
+                .build();
+        return uri.toUriString();
     }
  
 }

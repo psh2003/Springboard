@@ -9,6 +9,7 @@
 <head>
 <title>게시글 작성</title>
 <link rel="stylesheet" href="${path}/resources/css/board_write.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
     
 <body>
@@ -63,11 +64,30 @@
 <script>
 //글쓰기
 function fn_addtoBoard(){
-    
+    var title = $('#title').val();
+    var content = $('#content').val();
     var form = document.getElementById("writeForm");
+    if(title==""){
+    	alert("제목을 입력하세요");
+    	$('#title').focus();
+    	return;
+    }
+    else if(content==""){
+    	alert("내용을 입력하세요");
+    	$('#content').focus();
+    	return;
+    }else{
+    	var con = confirm("등록하시겠습니까?");
+    	if(con==true){
+    		form.action = "<c:url value='/board/write.do'/>";
+    	    form.submit();
+    	    alert("등록 되었습니다.");
+    	}
+    	else{
+    		return;
+    	}
+    }
     
-    form.action = "<c:url value='/board/write.do'/>";
-    form.submit();
     
 }
  
@@ -80,6 +100,7 @@ function fn_cancel(){
     form.submit();
     
 }
+
 </script>
 </div>
 </body>

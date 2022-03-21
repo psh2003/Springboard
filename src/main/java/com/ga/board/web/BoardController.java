@@ -40,11 +40,9 @@ public class BoardController {
         PageMaker pageMaker = new PageMaker();
         pageMaker.setCri(cri);
         pageMaker.setTotalCount(boardServiceImpl.countBoardListTotal());
-            
         List<Map<String,Object>> list = boardServiceImpl.selectBoardList(cri);
         mav.addObject("list", list);
         mav.addObject("pageMaker", pageMaker);
-            
         return mav;
             
     }

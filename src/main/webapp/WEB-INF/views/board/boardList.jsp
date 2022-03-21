@@ -41,7 +41,6 @@ function fn_view(code){
     form.action = url;    
     form.submit(); 
 }
-
 </script>
 </head>
 <body>
@@ -93,6 +92,7 @@ function fn_view(code){
             	<a href='#' class="write_btn" onClick='fn_write()'>글쓰기</a>           
         	</div>
         	<div class="btn-group_pagination">
+				<c:set var="getPage" value= "${(param.page) == null ? 1 : param.page}"/>
         		<ul >
 				    <c:if test="${pageMaker.prev }">
 				    <li>
@@ -101,7 +101,7 @@ function fn_view(code){
 				    </c:if>
 				    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="pageNum">
 				    <li>
-				        <a href='<c:url value="/board/boardList?page=${pageNum }"/>'>${pageNum }</a>
+				        <a class = ${(getPage)==(pageNum) ? "text-orange" : "text-bold"} href='<c:url value="/board/boardList?page=${pageNum }"/>'>${pageNum }</a>
 				    </li>
 				    </c:forEach>
 				    <c:if test="${pageMaker.next && pageMaker.endPage >0 }">

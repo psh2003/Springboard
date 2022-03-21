@@ -49,6 +49,11 @@ public class MemberDAOImpl implements MemberDAO {
         // TODO Auto-generated method stub
  
     }
+	public int checkId(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("member.checkId",vo);
+	}
+
 	
  
 }

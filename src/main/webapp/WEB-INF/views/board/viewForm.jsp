@@ -9,6 +9,7 @@
 <head>
 <title>게시글 상세</title>
 <link rel="stylesheet" href="${path}/resources/css/board_view.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -44,15 +45,30 @@
 	        <tbody>
 	            <tr>
 	                <th>제목</th>
-	                <td><input type="text" id="title" name="title" value="${result.title }"/></td>
+	                <c:choose>
+		                <c:when test="${sessionScope.userName==result.writer}">
+		                	<td><input type="text" id="title" name="title" value="${result.title }"/></td>
+		                </c:when>
+		                <c:when test="${sessionScope.userName!=result.writer}">
+		                	<td><input type="text" id="title" name="title" value="${result.title }" disabled="disabled"/></td>
+		                </c:when>
+	                </c:choose>
 	            </tr>
 	            <tr>
 	                <th>내용</th>
-	                <td class="content"><textarea rows="10" cols="10" id="content" name="content"><c:out value="${result.content }"/></textarea></td>
+	                <c:choose>
+		                <c:when test="${sessionScope.userName==result.writer}">
+	                		<td class="content"><textarea rows="10" cols="10" id="content" name="content"><c:out value="${result.content }"/></textarea></td>
+	                	</c:when>
+	                	<c:when test="${sessionScope.userName!=result.writer}">
+		                	<td class="content"><textarea rows="10" cols="10" id="content" name="content" disabled="disabled"><c:out value="${result.content}"/></textarea></td>
+		                </c:when>
+	                </c:choose>
 	            </tr>
 	            <tr>
 	                <th>작성자</th>
 	                <td><input id="writer" name="writer" value="${result.writer }" readonly onfocus="this.blur()"></td>
+	                
 	            </tr>
 	        </tbody>
 	    </table>
@@ -82,9 +98,28 @@ function fn_cancel(){
 function fn_update(){
     
     var form = document.getElementById("viewForm");
-    
-    form.action = "<c:url value='/board/updateboard.do'/>";
-    form.submit();
+    var title = $('#title').val();
+    var content = $('#content').val();
+    if(title==""){
+    	alert("제목을 입력하세요");
+    	$('#title').focus();
+    	return;
+    }
+    else if(content==""){
+    	alert("내용을 입력하세요");
+    	$('#content').focus();
+    	return;
+    }else{
+    	var con = confirm("수정하시겠습니까?");
+    	if(con==true){
+    		form.action = "<c:url value='/board/updateboard.do'/>";
+    	    form.submit();
+    	    alert("수정 되었습니다.");
+    	}
+    	else{
+    		return;
+    	}
+    }
 }
  
 //답변
@@ -100,9 +135,18 @@ function fn_relay(){
 function fn_delete(){
     
     var form = document.getElementById("viewForm");
+    var title = $('#title').val();
+    var content = $('#content').val();
+  	var con = confirm("삭제하시겠습니까?");
+  	if(con==true){
+  		form.action = "<c:url value='/board/deleteboard.do'/>";
+  	    form.submit();
+  	    alert("삭제 되었습니다.");
+  	}
+  	else{
+  		return;
+  	}
     
-    form.action = "<c:url value='/board/deleteboard.do'/>";
-    form.submit();
 }
 </script>
 </div>

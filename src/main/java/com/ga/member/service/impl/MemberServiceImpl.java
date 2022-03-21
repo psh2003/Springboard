@@ -44,5 +44,13 @@ public class MemberServiceImpl implements MemberService {
     public void updateMember(MemberVO vo) {
         
     }
+
+	@Override
+	public int checkId(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return memberDao.checkId(vo);
+	}
+
+
  
 }
